@@ -1,0 +1,35 @@
+
+.page-transition-enter {
+  opacity: 0.01;
+  transform: translateY(50px);
+}
+
+.page-transition-enter.page-transition-enter-active {
+  opacity: 1;
+  transform: none;
+  transition: opacity .4s ease-in, transform .4s ease;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: none;
+  display: none;
+}
+
+.page-transition-exit.page-transition-exit-active {
+  opacity: 0.01;
+  transform: translateY(-50px);
+  transition: opacity .15s ease-in, transform .15s ease;
+}
+// need some eork with transitions
+
+//.page-transition-appear {
+//  opacity: 0.01;
+//  transform: translateY(50px);
+//}
+//
+//.page-transition-appear.page-transition-appear-done {
+//  opacity: 1;
+//  transform: none;
+//  transition: opacity .4s ease-in, transform .4s ease;
+//}

@@ -1,0 +1,67 @@
+.billing-form__zone {
+  border-radius: 4px;
+  padding: 20px; }
+
+.billing-form__section {
+  margin-bottom: 20px; }
+
+.billing-form__zone--dark {
+  background-color: #f2f2f2; }
+
+.billing-form .billing-form__fieldset + .billing-form__fieldset {
+  margin-left: 16px; }
+
+.billing-form__fieldset--half {
+  width: 300px; }
+
+.billing-form__form-label {
+  font-size: 19px;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-bottom: 26px; }
+
+.billing-form .billing-form__dropzone {
+  border-radius: 4px;
+  min-height: 145px;
+  border-color: #b9b9b9; }
+
+.billing-form .billing-form__dropzone--active {
+  border-color: #00b9ff; }
+
+.billing-form .billing-form__dropzone-icons {
+  margin-top: 30px; }
+
+.billing-form .billing-form__dropzone-subtitle {
+  margin-top: 15px;
+  margin-bottom: 20px; }
+
+.billing-form__footer {
+  text-align: center;
+  width: 420px;
+  margin: 0 auto; }
+
+.billing-form__footer-button-wrapper {
+  padding-top: 10px;
+  margin-bottom: 15px; }
+
+.billing-form__footer-message {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.5); }
+
+.billing-form__input-getting-process {
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: 45px; }
+
+.billing-form__left-cell {
+  width: 200px;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.5);
+  vertical-align: middle; }
+
+.billing-form__right-cell {
+  width: 400px;
+  font-size: 17px;
+  color: #000;
+  vertical-align: middle; }

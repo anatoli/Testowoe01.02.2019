@@ -1,0 +1,39 @@
+//TODO: css-custom-properties
+//TODO: grid-layout
+@import "vars.sass"
+@import "mixins.sass"
+
+.grid
+  display: flex
+  flex-flow: row wrap
+  align-items: flex-start
+  margin-right: - $baseGap
+  &__item
+    // by default
+    width: 50%
+    padding-right: $baseGap
+    display: inline-flex
+    flex-flow: column nowrap
+    +r(960)
+      width: 100%
+      &.md-order-1
+        order: 1
+      &.md-order-2
+        order: 2
+      &.md-50
+        width: 50%
+      &.md-100
+        width: 100%
+    &--100
+      width: 100%
+    &--25
+      width: 25%
+    &--75
+      width: 75%
+    .calculator__form
+      .input__wrapper
+        padding-right: 0
+    &--has-loader
+      height: 100%
+
+

@@ -1,0 +1,17 @@
+.question-sign {
+  display: inline-block;
+  background: #a6a6a6;
+  color: white;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative; }
+  .question-sign:before {
+    font-family: Arial, sans-serif;
+    content: "?";
+    font-size: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%); }
