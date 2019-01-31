@@ -11,17 +11,9 @@ class Header extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
           <nav>
-            <ul>
-              <li>
-                <Link to="/">Search</Link>
-              </li>
-              <li>
-                <Link to="/widget/">Widget</Link>
-              </li>
-              <li>
-                <Link to="/about/">About</Link>
-              </li>
-            </ul>
+            <Link to="/">Search</Link>
+            <Link to="/widget/">Widget</Link>
+            <Link to="/about/">About</Link>
           </nav>
 
 
