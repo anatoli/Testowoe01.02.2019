@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import cn from 'classnames';
 import ReactDOM from 'react-dom';
-import SuccessIcon from '../../assets/icons/SuccessIcon';
 
 import './styles.sass';
 

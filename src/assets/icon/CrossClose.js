@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CrossClose = (props) => (
-  <svg { ...props } width="21px" height="21px" viewBox="0 0 21 21">
+  <svg { ...props } width="14px" height="14px" viewBox="0 0 21 21">
     <g transform="translate(-1668.000000, -1468.000000)">
       <g transform="translate(1669.000000, 1469.000000)">
         <path d="M18.3388348,18.3388348 L0.661165235,0.661165235"></path>
