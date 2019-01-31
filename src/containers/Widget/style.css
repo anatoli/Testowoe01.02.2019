@@ -62,20 +62,24 @@ ul {
 }
 .tags--checked svg{
   stroke: #fff;
+    margin: 10px;
+
+
 }
 
 .tags--checked p{
-  display: block;
-  margin: 10px;
+  display: inline-block;
+  margin: 10px 15px;
+    border-right: 1px solid #fff;
 }
 
 .tags--checked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   background: black;
-  margin-left: 5px;
+  margin-right: 5px;
   color: #fff;
-  padding: 0 1%;
-  display: inline-flex;
-
 }
 
 
