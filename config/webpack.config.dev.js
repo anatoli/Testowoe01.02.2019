@@ -11,6 +11,7 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
+const Fiber = require('fibers');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -96,6 +97,11 @@ module.exports = {
       // please link the files into your node_modules/ and let module-resolution kick in.
       // Make sure your source files are compiled, as they will not be processed in any way.
       new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
+      new webpack.ProvidePlugin({
+          $: 'jquery',
+          jQuery: 'jquery',
+          'window.jQuery': 'jquery'
+      }),
     ],
   },
   module: {
@@ -156,6 +162,43 @@ module.exports = {
           // "style" loader turns CSS into JS modules that inject <style> tags.
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
+
+            {
+              test: /\.scss$/,
+              use: [
+                  {
+                      loader: require.resolve('style-loader'),
+                  },
+                  {
+                      loader: require.resolve('css-loader'),
+                      options: {
+                          importLoaders: 1,
+                      }
+                  },
+                  {
+                      loader: require.resolve('sass-loader'),
+                  },
+                  {
+                      loader: require.resolve('postcss-loader'),
+                      options: {
+                          ident: 'postcss',
+                          plugins: () => [
+                              require('postcss-flexbugs-fixes'),
+                              autoprefixer({
+                                  browsers: [
+                                      '>1%',
+                                      'last 4 versions',
+                                      'Firefox ESR',
+                                      'not ie < 9',
+                                  ],
+                                  flexbox: 'no-2009',
+                              }),
+                          ],
+                      },
+                  },
+              ]
+          },
+
           {
             test: /\.css$/,
             use: [
@@ -171,6 +214,7 @@ module.exports = {
                 options: {
                   // Necessary for external CSS imports to work
                   // https://github.com/facebookincubator/create-react-app/issues/2677
+                  import: true,
                   ident: 'postcss',
                   plugins: () => [
                     require('postcss-flexbugs-fixes'),
@@ -198,7 +242,7 @@ module.exports = {
             // its runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
+            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.(css|scss)$/, /\.json$/],
             loader: require.resolve('file-loader'),
             options: {
               name: 'static/media/[name].[hash:8].[ext]',

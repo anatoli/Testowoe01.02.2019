@@ -3,36 +3,11 @@ import PropTypes from 'prop-types';
 
 import '../../assets/css/style.scss';
 
-class Header extends Component {
-    static PropTypes = {
-        scrollPosition: PropTypes.toString
-    };
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            headerPosition: ''
-        };
-    }
-    componentDidMount() {
-        window.addEventListener('scroll', () =>{
-            console.log(window.scrollY);
-            if(window.scrollY > 0){
-               this.setState({headerPosition: 'fixed'})
-            } else {
-                this.setState({headerPosition: ''})
-            };
-        });
-    }
-
-    componentWillUnmount(){
-        window.removeEventListener('scroll');
-    }
+class Footer extends Component {
 
     render() {
-        console.log(this.props.scrollPosition);
         return (
-            <section id="top" className={this.state.headerPosition}>
+            <footer id="footer" >
                 <div className="centered si-justify">
                     <a href="/" className="logo">
                         <strong>РЕМОНТ КВАРТИР</strong>
@@ -53,9 +28,9 @@ class Header extends Component {
                         </a>
                     </div>
                 </div>
-            </section>
+            </footer>
         );
     }
 }
 
-export default Header;
+export default Footer;

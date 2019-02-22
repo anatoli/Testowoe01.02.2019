@@ -64,6 +64,11 @@
     }
 }
 
+$brand_color : #5a241f;
+$second_brand_color : #735653;
+$brand_color_lg_10 : lighten(#5a241f, 10%); //#ffcc00
+$brand_color_dark_10 : darken(#5a241f, 10%); //#ffcc00
+
 .si-floating {
     animation: floating infinite ease-in-out 5s;
 }
@@ -83,7 +88,7 @@
 /* Button shadow */
 @keyframes si-button-pulse {
     from {
-        box-shadow: 0 0 8px 6px #f8c700, 0 0 12px 14px #f8c700;
+        box-shadow: 0 0 8px 6px lighten($second_brand_color, 50%), 0 0 12px 14px lighten($second_brand_color, 50%);
     }
     to {
         box-shadow: 0 0 18px 6px rgba(248, 199, 0, 0), 0 0 40px 40px rgba(248, 199, 0, 0);
@@ -247,7 +252,7 @@ sub {
     left: 40%;
     width: 20%;
     height: 20%;
-    fill: #ffcc00;
+    fill: $brand_color_lg_10;
     opacity: 0;
     transform: scale(5);
     transition: all 0.3s ease-out 0s;
@@ -263,7 +268,7 @@ sub {
     top: 42%;
     left: 42%;
     width: 16%;
-    background: #ffcc00;
+    background: $brand_color_lg_10;
     border-radius: 50%;
     transition: all 0.3s ease-out 0s;
 }
@@ -290,7 +295,7 @@ sub {
     left: -10px;
     bottom: -10px;
     right: -10px;
-    border: 10px solid #ffcc00;
+    border: 10px solid $brand_color_lg_10;
     border-radius: 50%;
     opacity: .5;
     transition: all 0.3s ease-out 0s;
@@ -542,24 +547,21 @@ a:active {
     position: relative;
     display: inline-block;
     font: 900 20px/30px Akrobat;
-    color: #272727;
+    color: #fff;
     letter-spacing: 1px;
     padding: 23px 50px;
-    background: #f8c700;
+    background: $brand_color_lg_10;
     border-radius: 100px;
-    box-shadow: inset 0 50px 60px #ffcc00, 0 5px 0 #e1b815;
     transform: translateZ(0)
 }
 
 .button:hover {
-    background: #f9d235;
-    box-shadow: inset 0 50px 60px #ffe065, 0 5px 0 #e1b815
+    background: lighten($brand_color, 20%);
 }
 
 .button:active {
     top: 0;
-    background: #e7b901;
-    box-shadow: inset 0 50px 60px #e7b901, 0 3px 0 #d0ab15
+    background: lighten($brand_color, 20%);
 }
 
 .button-description {
@@ -586,13 +588,13 @@ a:active {
 }
 
 .button.border {
-    border: 2px solid #ffcc00;
+    border: 2px solid $brand_color_lg_10;
     background: transparent;
     box-shadow: none;
 }
 
 .button.border:hover {
-    background: #ffcc00
+    background: $brand_color_lg_10
 }
 
 .button.border:active {
@@ -667,7 +669,7 @@ a:active {
 }
 
 .logo:hover {
-    color: #f5ce34;
+    color: $brand_color;
 }
 
 .logo:active {
@@ -690,11 +692,11 @@ a:active {
 }
 
 .si-phone .phone-link:hover {
-    color: #f5ce34;
+    color: $brand_color;
 }
 
 .si-phone .phone-link:active {
-    color: #dcb313;
+    color: $brand_color;
 }
 
 .si-phone .phone-link:after {
@@ -719,11 +721,11 @@ a:active {
 }
 
 .si-phone .modal-link:hover {
-    color: #f5ce34;
+    color: $brand_color;
 }
 
 .si-phone .modal-link:active {
-    color: #dcb313;
+    color: $brand_color;
 }
 
 .si-phone .modal-link span.text {
@@ -731,8 +733,9 @@ a:active {
 }
 
 .phone-icon-wrapper svg {
+    fill: #fff;
     margin-top: 5px;
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .phone-icon-wrapper {
@@ -742,7 +745,7 @@ a:active {
     width: 27px;
     height: 27px;
     border-radius: 50%;
-    background: #f5ce2f;
+    background: $brand_color;
     margin: -1px 10px 0 0;
     transition: all 0.2s ease-out 0s;
 }
@@ -752,7 +755,7 @@ a:hover .phone-icon-wrapper {
 }
 
 a:active .phone-icon-wrapper {
-    background: #dcb313;
+    background: $brand_color;
 }
 
 .phone-icon-wrapper:before, .phone-icon-wrapper:after {
@@ -763,7 +766,7 @@ a:active .phone-icon-wrapper {
     left: 0;
     right: 0;
     bottom: 0;
-    border: 1px solid #f5cd2d;
+    border: 1px solid $brand_color;
     border-radius: 50%;
 }
 
@@ -789,7 +792,9 @@ a:hover .phone-icon-wrapper:before, a:hover .phone-icon-wrapper:after, #top.fixe
 }
 
 header {
-    background: #f7f7f7 url(../../assets/img/header-bg.jpg) center top no-repeat;
+    background: RGBA(247, 247, 247, 0.88)  url(../../assets/img/bg-1-gazon.jpg) center top no-repeat;
+    background-size: cover;
+    background-blend-mode: color-dodge;
 }
 
 header .centered {
@@ -809,8 +814,8 @@ header .centered {
 
 .header-image {
     position: absolute;
-    left: 24%;
-    top: 0;
+    left: 35%;
+    top: 10%;
 }
 
 #usp {
@@ -862,7 +867,7 @@ header .centered {
 .check-wrapper {
     width: 27px;
     height: 27px;
-    background: #ffcc00;
+    background: $brand_color_lg_10;
     border-radius: 50%;
     position: absolute;
 }
@@ -907,7 +912,7 @@ header .centered {
     cursor: pointer;
     display: inline-block;
     position: relative;
-    margin: 0 40px;
+    margin: 0 15px;
     font: 20px/30px Akrobat;
     padding: 10px 0;
     transition: all 0.2s ease-out 0s;
@@ -921,7 +926,7 @@ header .centered {
     right: 0;
     width: 0;
     height: 2px;
-    background: #ffcc00;
+    background: $brand_color_lg_10;
     transition: all 0.3s ease-out 0s;
     pointer-events: none;
 }
@@ -1064,7 +1069,7 @@ header .centered {
 .single-slider-content-stat {
     flex: 0 0 48%;
     margin: 0 0 20px;
-    color: #ffcc00;
+    color: $brand_color_lg_10;
     font: 900 30px/36px Akrobat;
 }
 
@@ -1117,7 +1122,7 @@ header .centered {
     content: '';
     width: 25%;
     height: 5px;
-    background: #ffcc00;
+    background: $brand_color_lg_10;
     position: absolute;
     top: 52%;
     margin-top: -3px;
@@ -1126,7 +1131,7 @@ header .centered {
 }
 
 .owl-prev:hover:before, .owl-prev:hover:after, .owl-next:hover:before, .owl-next:hover:after {
-    background: #ffcc00
+    background: $brand_color_lg_10
 }
 
 .owl-prev:before, .owl-prev:after {
@@ -1217,7 +1222,7 @@ header .centered {
     height: 18px;
     padding: 4px;
     background: transparent;
-    border: 2px solid #ffcc00;
+    border: 2px solid $brand_color_lg_10;
     border-radius: 50%;
     transition: all 0.2s ease-out 0s;
 }
@@ -1235,15 +1240,15 @@ header .centered {
 }
 
 .owl-dot:hover span {
-    background: #ffcc00;
+    background: $brand_color_lg_10;
 }
 
 .owl-dot.active {
-    background: #ffcc00
+    background: $brand_color_lg_10
 }
 
 .owl-dot.active span {
-    background: #ffcc00
+    background: $brand_color_lg_10
 }
 
 .on-dark-bg .owl-prev, .on-dark-bg .owl-next {
@@ -1724,7 +1729,7 @@ header .centered {
 .fear-cross-icon {
     width: 40px;
     height: 40px;
-    border: 2px solid #ffcc00;
+    border: 2px solid $brand_color_lg_10;
     border-radius: 50%;
     position: absolute;
     left: 0;
@@ -1798,7 +1803,7 @@ header .centered {
     right: 0;
     width: 0;
     height: 1px;
-    background: #ffcc00;
+    background: $brand_color_lg_10;
     transition: all 0.3s ease-out 0s;
     pointer-events: none;
 }
@@ -1825,7 +1830,7 @@ header .centered {
 }
 
 .faq-title:hover {
-    color: #ffcc00;
+    color: $brand_color_lg_10;
 }
 
 .faq-title:active {
@@ -2073,7 +2078,7 @@ html.si-lock, html.si-lock2 {
 }
 
 .si-close:hover:before, .si-close:hover:after {
-    background: #ffcc00
+    background: $brand_color_lg_10
 }
 
 .si-close:active:before, .si-close:active:after {
@@ -2374,7 +2379,7 @@ html.si-lock, html.si-lock2 {
 .big-modal-button.next {
     background: #f6c501;
     color: #272727;
-    box-shadow: inset 0 20px 20px #ffcc00, 0 3px 0 #e1b815;
+    box-shadow: inset 0 20px 20px $brand_color_lg_10, 0 3px 0 $brand_color_dark_10;
     padding-right: 35px;
 }
 
@@ -2392,7 +2397,7 @@ html.si-lock, html.si-lock2 {
 
 .big-modal-button.next:hover {
     background: #f9d235;
-    box-shadow: inset 0 20px 20px #ffe065, 0 3px 0 #e1b815
+    box-shadow: inset 0 20px 20px #ffe065, 0 3px 0 $brand_color_dark_10
 }
 
 .big-modal-button.next:active {

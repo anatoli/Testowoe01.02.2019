@@ -165,6 +165,42 @@ module.exports = {
           // tags. If you use code splitting, however, any async bundles will still
           // use the "style" loader inside the async code so CSS from them won't be
           // in the main CSS file.
+
+          {
+            test: /\.scss$/,
+            use: [
+                {
+                    loader: require.resolve('style-loader'),
+                },
+                {
+                    loader: require.resolve('css-loader'),
+                    options: {
+                        importLoaders: 1,
+                    }
+                },
+                {
+                    loader: require.resolve('sass-loader'),
+                },
+                {
+                    loader: require.resolve('postcss-loader'),
+                    options: {
+                        ident: 'postcss',
+                        plugins: () => [
+                            require('postcss-flexbugs-fixes'),
+                            autoprefixer({
+                                browsers: [
+                                    '>1%',
+                                    'last 4 versions',
+                                    'Firefox ESR',
+                                    'not ie < 9',
+                                ],
+                                flexbox: 'no-2009',
+                            }),
+                        ],
+                    },
+                },
+            ]
+          },
           {
             test: /\.css$/,
             loader: ExtractTextPlugin.extract(
@@ -222,7 +258,7 @@ module.exports = {
             // it's runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
+            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.(css|scss)$/, /\.json$/],
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
             },
