@@ -1,14 +1,15 @@
 import React from 'react';
 
-const CrossClose = (props) => (
-  <svg { ...props } width="14px" height="14px" viewBox="0 0 21 21">
-    <g transform="translate(-1668.000000, -1468.000000)">
-      <g transform="translate(1669.000000, 1469.000000)">
-        <path d="M18.3388348,18.3388348 L0.661165235,0.661165235"></path>
-        <path d="M18.3388348,0.661165235 L0.661165235,18.3388348"></path>
-      </g>
-    </g>
-  </svg>
-);
+const CrossClose = (props) => {
+    const width = `${props.width}px` || '14px';
+    const height = `${props.height}px` || '14px';
+    return (
+        <svg id='CrossClose' width={width} height={height} xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+            <path
+                d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm0 10.293l5.293-5.293.707.707-5.293 5.293 5.293 5.293-.707.707-5.293-5.293-5.293 5.293-.707-.707 5.293-5.293-5.293-5.293.707-.707 5.293 5.293z"/>
+        </svg>
+    )
+}
+
 
 export default CrossClose;

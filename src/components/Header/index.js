@@ -16,7 +16,6 @@ class Header extends Component {
     }
     componentDidMount() {
         window.addEventListener('scroll', () =>{
-            console.log(window.scrollY);
             if(window.scrollY > 0){
                this.setState({headerPosition: 'fixed'})
             } else {
@@ -30,7 +29,6 @@ class Header extends Component {
     }
 
     render() {
-        console.log(this.props.scrollPosition);
         return (
             <section id="top" className={this.state.headerPosition}>
                 <div className="centered si-justify">
